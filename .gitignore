@@ -1,3 +1,4 @@
 /vendor/
 /var/cache/profiler/
 /var/logs/weblinks.log
+/nbproject
