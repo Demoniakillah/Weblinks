@@ -1,0 +1,24 @@
+<div class="well">
+        {{ form_start(linkForm,{'attr':{'class':'form-horizontal'}}) }}
+        <div class="form-group">
+            {{ form_label(linkForm.title,null,{'label_attr':{'class':'col-md-4 control-label'}}) }}
+            <div class="col-md-6">
+                {{ form_widget(linkForm.title,{'attr':{'class':'form-control'}}) }}
+                {{ form_errors(linkForm.title) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(linkForm.url,null,{'label_attr':{'class':'col-md-4 control-label'}}) }}
+            <div class="col-md-6">
+                {{ form_widget(linkForm.url,{'attr':{'class':'form-control'}}) }}
+                {{ form_errors(linkForm.url) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-3">
+                <input class="btn btn-primary" type="submit" value="save">
+            </div>
+        </div>
+            {{ form_rest(linkForm) }}
+            {{ form_end(linkForm) }}
+    </div>

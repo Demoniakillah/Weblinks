@@ -1,0 +1,35 @@
+<div class="modal fade" id="formulaireUser">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">x</button>
+          <h4 class="modal-title">New user</h4>
+        </div>
+        <div class="modal-body">
+            {{ include('userFormOnly.html.twig') }}
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-info" data-dismiss="modal">Annuler</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% block script %}
+    <script>
+    $(function(){
+        $("userForm").submit(function(e) {
+          e.preventDefault();
+          var $form = $(this);
+          $.post($form.attr("action"), $form.serialize())
+          .done(function(data) {
+            $("#html2").html(data);
+            $("#formulaireUser").modal("hide"); 
+          })
+          .fail(function() {
+            alert("ça marche pas...");
+          });
+        });
+      });
+    </script>
+    {% endblock %}
